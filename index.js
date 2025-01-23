@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const mongoose = require("mongoose");
 
 const CustomerRoute = require("./routes/customer.route");
@@ -8,6 +9,7 @@ const app = express();
 const port = 8080;
 
 //middleware
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
