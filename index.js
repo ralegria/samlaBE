@@ -2,9 +2,10 @@ const express = require("express");
 const mongoose = require("mongoose");
 
 const CustomerRoute = require("./routes/customer.route");
+const StateRoute = require("./routes/states.route");
 
 const app = express();
-const port = 3000;
+const port = 8080;
 
 //middleware
 app.use(express.json());
@@ -12,6 +13,7 @@ app.use(express.urlencoded({ extended: false }));
 
 //routes
 app.use("/api/customers", CustomerRoute);
+app.use("/api/states", StateRoute);
 
 app.listen(port, () => {
   console.log(`Samla API listening at http://localhost:${port}`);
